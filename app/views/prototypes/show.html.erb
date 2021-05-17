@@ -12,7 +12,7 @@
           <%= link_to "削除する", prototype_path(@prototype), method: :delete, class: :prototype__btn %>
         </div>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
-      <% else %>
+      <% end %>
       <div class="prototype__image">
         <%= image_tag @prototype.image %>
       </div>
@@ -31,7 +31,6 @@
         </div>
       </div>
       <div class="prototype__comments">
-      <% end %>
       <% if user_signed_in? %>
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
           <%= form_with model: [@prototype, @comment], local: true do |f|%>
